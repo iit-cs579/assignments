@@ -292,7 +292,7 @@ def main():
 
     graph = create_graph(users, friend_counts)
     print('graph has %s nodes and %s edges' % (len(graph.nodes()), len(graph.edges())))
-    draw_network(graph, friend_counts, users, 'network.png')
+    draw_network(graph, users, 'network.png')
     print('network drawn to network.png')
 
 
