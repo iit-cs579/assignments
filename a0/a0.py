@@ -13,7 +13,7 @@ to plot these links, as well as print some statistics of the resulting graph.
 
 1. Create an account on [twitter.com](http://twitter.com).
 2. Generate authentication tokens by following the instructions [here](https://dev.twitter.com/docs/auth/tokens-devtwittercom).
-3. Add your tokens to the `twitter.cfg` file. (API Key == Consumer Key)
+3. Add your tokens to the key/token variables below. (API Key == Consumer Key)
 4. Be sure you've installed the Python modules
 [networkx](http://networkx.github.io/) and
 [TwitterAPI](https://github.com/geduldig/TwitterAPI). Assuming you've already
@@ -31,30 +31,25 @@ Your output should match the sample provided in Log.txt.
 
 # Imports you'll need.
 from collections import Counter
-import configparser
 import matplotlib.pyplot as plt
 import networkx as nx
 import sys
 import time
 from TwitterAPI import TwitterAPI
 
+consumer_key = 'fixme'
+consumer_secret = 'fixme'
+access_token = 'fixme'
+access_token_secret = 'fixme'
+
 
 # This method is done for you. Make sure to put your credentials in the file twitter.cfg.
-def get_twitter(config_file):
-    """ Read the config_file and construct an instance of TwitterAPI.
-    Args:
-      config_file ... A config file in ConfigParser format with Twitter credentials
+def get_twitter():
+    """ Construct an instance of TwitterAPI using the tokens you entered above.
     Returns:
       An instance of TwitterAPI.
     """
-    config = configparser.ConfigParser()
-    config.read(config_file)
-    twitter = TwitterAPI(
-                   config.get('twitter', 'consumer_key'),
-                   config.get('twitter', 'consumer_secret'),
-                   config.get('twitter', 'access_token'),
-                   config.get('twitter', 'access_token_secret'))
-    return twitter
+    return TwitterAPI(consumer_key, consumer_secret, access_token, access_token_secret)
 
 
 def read_screen_names(filename):
@@ -112,7 +107,7 @@ def get_users(twitter, screen_names):
 
     In this example, I test retrieving two users: twitterapi and twitter.
 
-    >>> twitter = get_twitter('twitter.cfg')
+    >>> twitter = get_twitter()
     >>> users = get_users(twitter, ['twitterapi', 'twitter'])
     >>> [u['id'] for u in users]
     [6253282, 783214]
@@ -138,7 +133,7 @@ def get_friends(twitter, screen_name):
     the first 5000 accounts returned.
 
     In this test case, I return the first 5 accounts that I follow.
-    >>> twitter = get_twitter('twitter.cfg')
+    >>> twitter = get_twitter()
     >>> get_friends(twitter, 'aronwc')[:5]
     [695023, 1697081, 8381682, 10204352, 11669522]
     """
@@ -158,7 +153,7 @@ def add_all_friends(twitter, users):
     Returns:
         Nothing
 
-    >>> twitter = get_twitter('twitter.cfg')
+    >>> twitter = get_twitter()
     >>> users = [{'screen_name': 'aronwc'}]
     >>> add_all_friends(twitter, users)
     >>> users[0]['friends'][:5]
@@ -275,7 +270,7 @@ def draw_network(graph, users, filename):
 
 def main():
     """ Main method. You should not modify this. """
-    twitter = get_twitter('twitter.cfg')
+    twitter = get_twitter()
     screen_names = read_screen_names('candidates.txt')
     print('Established Twitter connection.')
     print('Read screen names: %s' % screen_names)
