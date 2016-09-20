@@ -8,7 +8,7 @@
 #
 # We'll cluster the resulting graph into communities, as well as recommend friends for Bill Gates.
 #
-# Complete the **eight** methods below that are indicated by `TODO`. I've provided some sample output to help guide your implementation.
+# Complete the **15** methods below that are indicated by `TODO`. I've provided some sample output to help guide your implementation.
 
 
 # You should not use any imports not listed here:
