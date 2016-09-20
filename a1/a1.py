@@ -1,6 +1,6 @@
 # coding: utf-8
 
-# # CS579: Assignment 2
+# # CS579: Assignment 1
 #
 # In this assignment, we'll implement community detection and link prediction algorithms using Facebook "like" data.
 #
