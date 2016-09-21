@@ -387,7 +387,7 @@ def jaccard(graph, node, k):
 # $$
 #
 # where
-# - $\beta \in [0,1]$ and $m \in [2,\infty]$ are user-provided parameters
+# - $\beta \in [0,1]$ is a user-provided parameter
 # - $i$ is the length of the shortest path from $x$ to $y$
 # - $n_{x,y,i}$ is the number of shortest paths between $x$ and $y$ with length $i$
 
