@@ -392,7 +392,7 @@ def jaccard(graph, node, k):
 # - $n_{x,y,i}$ is the number of shortest paths between $x$ and $y$ with length $i$
 
 
-def path_score(graph, root, k, beta, m):
+def path_score(graph, root, k, beta):
     """
     Compute a new link prediction scoring function based on the shortest
     paths between two nodes, as defined above.
@@ -406,7 +406,6 @@ def path_score(graph, root, k, beta, m):
       root.....a node in the graph (a string) to recommend links for.
       k........the number of links to recommend.
       beta.....the beta parameter in the equation above.
-      m........the m parameter in the equation above.
 
     Returns:
       A list of tuples in descending order of score. Ties are broken by
