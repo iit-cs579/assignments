@@ -293,7 +293,7 @@ def eval_all_combinations(docs, labels, punct_vals,
       'punct': True or False, the setting of keep_internal_punct
       'features': The list of functions used to compute features.
       'min_freq': The setting of the min_freq parameter.
-      'accuracy': The average cross_validation accuracy for this setting.
+      'accuracy': The average cross_validation accuracy for this setting, using 5 folds.
 
       This list should be SORTED in descending order of accuracy.
 
