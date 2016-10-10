@@ -456,9 +456,9 @@ def main():
 
     # Print top coefficients per class.
     print('\nTOP COEFFICIENTS PER CLASS:')
-    print('positive words:')
+    print('negative words:')
     print('\n'.join(['%s: %.5f' % (t,v) for t,v in top_coefs(clf, 0, 5, vocab)]))
-    print('\nnegative words:')
+    print('\npositive words:')
     print('\n'.join(['%s: %.5f' % (t,v) for t,v in top_coefs(clf, 1, 5, vocab)]))
 
     # Parse test data
