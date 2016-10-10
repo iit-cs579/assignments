@@ -275,7 +275,7 @@ def eval_all_combinations(docs, labels, punct_vals,
     keep_internal_punct and min_freqs, we will enumerate all
     possible combinations of feature functions. So, if
     feature_fns = [token_features, token_pair_features, lexicon_features],
-    then we will consider all 4 combinations of features (see Log.txt
+    then we will consider all 7 combinations of features (see Log.txt
     for more examples).
 
     Params:
