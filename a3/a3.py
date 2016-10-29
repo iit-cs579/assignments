@@ -117,6 +117,10 @@ def make_predictions(movies, ratings_train, ratings_test):
     i. The weight for movie m corresponds to the cosine similarity between m
     and i.
 
+    If there are no other movies with positive cosine similarity to use in the
+    prediction, use the mean rating of the target user in ratings_train as the
+    prediction.
+
     Params:
       movies..........The movies DataFrame.
       ratings_train...The subset of ratings used for making predictions. These are the "historical" data.
