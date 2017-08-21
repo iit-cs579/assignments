@@ -1,5 +1,7 @@
 ## Assignment 0
 
+**Not yet finalized!**
+
 **50 points**  
 
 
