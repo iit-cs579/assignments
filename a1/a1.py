@@ -52,8 +52,8 @@ def bfs(graph, root, max_depth):
     Returns:
       node2distances...dict from each node to the length of the shortest path from
                        the root node
-      node2num_paths...dict from each node to the number of shortest paths from the
-                       root node that pass through this node.
+      node2num_paths...dict from each node to the number of shortest paths from 
+                       the root node to this node.
       node2parents.....dict from each node to the list of its parents in the search
                        tree
 
