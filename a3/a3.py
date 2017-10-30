@@ -5,6 +5,9 @@
 # Here we'll implement a content-based recommendation algorithm.
 # It will use the list of genres for a movie as the content.
 # The data come from the MovieLens project: http://grouplens.org/datasets/movielens/
+# Note that I have not provided many doctests for this one. I strongly
+# recommend that you write your own for each function to ensure your
+# implementation is correct.
 
 # Please only use these imports.
 from collections import Counter, defaultdict
