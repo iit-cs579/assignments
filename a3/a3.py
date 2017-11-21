@@ -102,7 +102,7 @@ def cosine_sim(a, b):
       a...A csr_matrix with shape (1, number_features)
       b...A csr_matrix with shape (1, number_features)
     Returns:
-      The cosine similarity, defined as: dot(a, b) / ||a|| * ||b||
+      A float. The cosine similarity, defined as: dot(a, b) / ||a|| * ||b||
       where ||a|| indicates the Euclidean norm (aka L2 norm) of vector a.
     """
     ###TODO
