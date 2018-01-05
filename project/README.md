@@ -11,7 +11,7 @@ Project guidelines:
 - After the Proposal survey is submitted (see below), a new private repository will be created for your group.
 - Place all code for your project in a folder called `code` in your group project repository.
 - There's no need to store the raw data in github, but it should be clear how to collect it by reading your report and code.
-- See an [example project repo](https://github.com/iit-cs579/sample_project)
+- See an [example project repo](https://github.com/iit-cs579/sample-project)
 
 ### Proposal
 Complete this survey, **one per team**, to submit your propsal:
