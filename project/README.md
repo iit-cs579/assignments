@@ -6,7 +6,7 @@ Project guidelines:
 
 - The data used should be as raw as possible. E.g., you may not simply download a pre-processed dataset from the UCI repository.
 - The groups may be up to size 3.
-- Sample projects can be found [here](http://nlp.stanford.edu/courses/cs224n/) or by reading recent papers published in ICWSM, a leading OSNA confernece: <http://icwsm.org/2017/program/accepted-papers/>
+- Sample projects can be found [here](http://snap.stanford.edu/class/cs224w-2016/projects.html) or by reading recent papers published in ICWSM, a leading OSNA confernece: <http://icwsm.org/2017/program/accepted-papers/>
 - You may use existing libraries (e.g., nltk, TensorFlow, theano), but your project should be your own.
 - After the Proposal survey is submitted (see below), a new private repository will be created for your group.
 - Place all code for your project in a folder called `code` in your group project repository.
