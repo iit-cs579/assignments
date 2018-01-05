@@ -2,7 +2,7 @@
 
 1. Learn Python by completing the online Python training course at <http://www.codecademy.com/tracks/python>.
 
-2. Learn git by completing the online training course at <http://try.github.io>.
+2. Learn git by completing the online training course at <http://try.github.io> and/or watching https://trevordmiller.com/courses/real-world-git
 
 3. Install the Python/SciPy stack on your computer (if you haven't already) by follwing the instructions here: <http://continuum.io/downloads>. We'll be using Python 3.6, **not** Python 2.
 
