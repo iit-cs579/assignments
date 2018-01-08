@@ -10,6 +10,6 @@ Most common friends:
 [(18766459, 3), (19608297, 3), (822215673812119553, 3), (12, 2), (428333, 2)]
 Friend Overlap:
 [('DrJillStein', 'GovGaryJohnson', 238), ('GovGaryJohnson', 'HillaryClinton', 14), ('GovGaryJohnson', 'realDonaldTrump', 13), ('DrJillStein', 'HillaryClinton', 3), ('HillaryClinton', 'realDonaldTrump', 1), ('DrJillStein', 'realDonaldTrump', 0)]
-User followed by Hillary and Donald: WhiteHouse
+User followed by Hillary and Donald: [REDACTED]
 graph has 267 nodes and 529 edges
 network drawn to network.png
