@@ -12,7 +12,7 @@ accounts. We will then use the [networkx](http://networkx.github.io/) library
 to plot these links, as well as print some statistics of the resulting graph.
 
 1. Create an account on [twitter.com](http://twitter.com).
-2. Generate authentication tokens by following the instructions [here](https://dev.twitter.com/docs/auth/tokens-devtwittercom).
+2. Generate authentication tokens by following the instructions [here](https://developer.twitter.com/en/docs/basics/authentication/guides/access-tokens.html).
 3. Add your tokens to the key/token variables below. (API Key == Consumer Key)
 4. Be sure you've installed the Python modules
 [networkx](http://networkx.github.io/) and
