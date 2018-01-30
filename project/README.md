@@ -5,6 +5,7 @@ The project is an open-ended investigation into an OSNA problem.
 Project guidelines:
 
 - The data used should be as raw as possible. E.g., you may not simply download a pre-processed dataset from the UCI repository.
+Instead, you should collect data directly from an online social networking source (e.g., Twitter, Facebook, Instagram, Reddit, etc.)
 - The groups may be up to size 3.
 - Sample projects can be found [here](http://snap.stanford.edu/class/cs224w-2016/projects.html) or by reading recent papers published in ICWSM, a leading OSNA confernece: <http://icwsm.org/2017/program/accepted-papers/>
 - You may use existing libraries (e.g., nltk, TensorFlow, theano), but your project should be your own.
