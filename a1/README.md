@@ -1,4 +1,3 @@
 Assignment 1
 
-
-**Under construction!**
+See `a1.py`.
