@@ -14,6 +14,7 @@
 # You should not use any imports not listed here:
 from collections import Counter, defaultdict, deque
 import copy
+from itertools import combinations
 import math
 import networkx as nx
 import urllib.request
@@ -52,8 +53,8 @@ def bfs(graph, root, max_depth):
     Returns:
       node2distances...dict from each node to the length of the shortest path from
                        the root node
-      node2num_paths...dict from each node to the number of shortest paths from 
-                       the root node to this node.
+      node2num_paths...dict from each node to the number of shortest paths from the
+                       root node to this node.
       node2parents.....dict from each node to the list of its parents in the search
                        tree
 
@@ -158,26 +159,12 @@ def approximate_betweenness(graph, max_depth):
     pass
 
 
-def is_approximation_always_right():
+def get_components(graph):
     """
-    Look at the doctests for approximate betweenness. In this example, the
-    edge with the highest betweenness was ('B', 'D') for both cases (when
-    max_depth=5 and max_depth=2).
-
-    Consider an arbitrary graph G. For all max_depth > 1, will it always be
-    the case that the edge with the highest betweenness will be the same
-    using either approximate_betweenness verses the exact computation?
-    Answer this question below.
-
-    In this function, you just need to return either the string 'yes' or 'no'
-    (no need to do any actual computations here).
-    >>> s = is_approximation_always_right()
-    >>> type(s)
-    <class 'str'>
+    A helper function you may use below.
+    Returns the list of all connected components in the given graph.
     """
-    ###TODO
-    pass
-
+    return [c for c in nx.connected_component_subgraphs(graph)]
 
 def partition_girvan_newman(graph, max_depth):
     """
@@ -186,7 +173,7 @@ def partition_girvan_newman(graph, max_depth):
     just remove edges until more than one component is created, then return
     those components.
     That is, compute the approximate betweenness of all edges, and remove
-    them until multiple comonents are created.
+    them until multiple components are created.
 
     You only need to compute the betweenness once.
     If there are ties in edge betweenness, break by edge name (e.g.,
@@ -288,6 +275,42 @@ def norm_cut(S, T, graph):
     pass
 
 
+def brute_force_norm_cut(graph, max_size):
+    """
+    Enumerate over all possible cuts of the graph, up to max_size, and compute the norm cut score.
+    Params:
+        graph......graph to be partitioned
+        max_size...maximum number of edges to consider for each cut.
+                   E.g, if max_size=2, consider removing edge sets
+                   of size 1 or 2 edges.
+    Returns:
+        (unsorted) list of (score, edge_list) tuples, where
+        score is the norm_cut score for each cut, and edge_list
+        is the list of edges (source, target) for each cut.
+        
+
+    Note: only return entries if removing the edges results in exactly
+    two connected components.
+
+    You may find itertools.combinations useful here.
+
+    >>> r = brute_force_norm_cut(example_graph(), 1)
+    >>> len(r)
+    1
+    >>> r
+    (0.41666666666666663, [('B', 'D')])
+    >>> r = brute_force_norm_cut(example_graph(), 2)
+    >>> len(r)
+    14
+    >>> sorted(r)[0]
+    (0.41666666666666663, [('A', 'B'), ('B', 'D')])
+    """
+    ###TODO
+    pass
+
+
+
+
 def score_max_depths(graph, max_depths):
     """
     In order to assess the quality of the approximate partitioning method
@@ -378,53 +401,6 @@ def jaccard(graph, node, k):
     pass
 
 
-# One limitation of Jaccard is that it only has non-zero values for nodes two hops away.
-#
-# Implement a new link prediction function that computes the similarity between two nodes $x$ and $y$  as follows:
-#
-# $$
-# s(x,y) = \beta^i n_{x,y,i}
-# $$
-#
-# where
-# - $\beta \in [0,1]$ is a user-provided parameter
-# - $i$ is the length of the shortest path from $x$ to $y$
-# - $n_{x,y,i}$ is the number of shortest paths between $x$ and $y$ with length $i$
-
-
-def path_score(graph, root, k, beta):
-    """
-    Compute a new link prediction scoring function based on the shortest
-    paths between two nodes, as defined above.
-
-    Note that we don't return scores for edges that already appear in the graph.
-
-    This algorithm should have the same time complexity as bfs above.
-
-    Params:
-      graph....a networkx graph
-      root.....a node in the graph (a string) to recommend links for.
-      k........the number of links to recommend.
-      beta.....the beta parameter in the equation above.
-
-    Returns:
-      A list of tuples in descending order of score. Ties are broken by
-      alphabetical order of the terminal node in the edge.
-
-    In this example below, we remove edge (D, F) from the
-    example graph. The top two edges to add according to path_score are
-    (D, F), with score 0.5, and (D, A), with score .25. (Note that (D, C)
-    is tied with a score of .25, but (D, A) is first alphabetically.)
-
-    >>> g = example_graph()
-    >>> train_graph = g.copy()
-    >>> train_graph.remove_edge(*('D', 'F'))
-    >>> path_score(train_graph, 'D', k=4, beta=.5)
-    [(('D', 'F'), 0.5), (('D', 'A'), 0.25), (('D', 'C'), 0.25)]
-    """
-    ###TODO
-    pass
-
 
 def evaluate(predicted_edges, graph):
     """
@@ -481,11 +457,11 @@ def main():
     print('norm_cut scores by max_depth:')
     print(score_max_depths(subgraph, range(1,5)))
     clusters = partition_girvan_newman(subgraph, 3)
+    print('%d clusters' % len(clusters))
     print('first partition: cluster 1 has %d nodes and cluster 2 has %d nodes' %
           (clusters[0].order(), clusters[1].order()))
-    print('cluster 2 nodes:')
-    print(clusters[1].nodes())
-
+    print('smaller cluster nodes:')
+    print(sorted(clusters, key=lambda x: x.order())[0].nodes())
     test_node = 'Bill Gates'
     train_graph = make_training_graph(subgraph, test_node, 5)
     print('train_graph has %d nodes and %d edges' %
@@ -497,12 +473,6 @@ def main():
     print(jaccard_scores)
     print('jaccard accuracy=%g' %
           evaluate([x[0] for x in jaccard_scores], subgraph))
-
-    path_scores = path_score(train_graph, test_node, k=5, beta=.1)
-    print('\ntop path scores for Bill Gates for beta=.1:')
-    print(path_scores)
-    print('path accuracy for beta .1=%g' %
-          evaluate([x[0] for x in path_scores], subgraph))
 
 
 if __name__ == '__main__':
