@@ -181,7 +181,7 @@ def partition_girvan_newman(graph, max_depth):
 
     Note: the original graph variable should not be modified. Instead,
     make a copy of the original graph prior to removing edges.
-    See the Graph.copy method https://networkx.github.io/documentation/development/reference/generated/networkx.Graph.copy.html
+    See the Graph.copy method https://networkx.github.io/documentation/stable/reference/classes/generated/networkx.Graph.copy.html
     Params:
       graph.......A networkx Graph
       max_depth...An integer representing the maximum depth to search.
