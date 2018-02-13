@@ -298,7 +298,7 @@ def brute_force_norm_cut(graph, max_size):
     >>> len(r)
     1
     >>> r
-    (0.41666666666666663, [('B', 'D')])
+    [(0.41666666666666663, [('B', 'D')])]
     >>> r = brute_force_norm_cut(example_graph(), 2)
     >>> len(r)
     14
