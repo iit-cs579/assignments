@@ -30,7 +30,7 @@ import numpy as np
 import os
 import re
 from scipy.sparse import csr_matrix
-from sklearn.cross_validation import KFold
+from sklearn.model_selection import KFold
 from sklearn.linear_model import LogisticRegression
 import string
 import tarfile
