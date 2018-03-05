@@ -1,7 +1,7 @@
 best cross-validation result:
-{'features': (<function token_pair_features at 0x114172c80>, <function lexicon_features at 0x114172d08>), 'punct': True, 'accuracy': 0.77000000000000013, 'min_freq': 2}
+{'punct': True, 'features': (<function token_pair_features at 0x108d0aa60>, <function lexicon_features at 0x108d0aae8>), 'min_freq': 2, 'accuracy': 0.77000000000000013}
 worst cross-validation result:
-{'features': (<function lexicon_features at 0x114172d08>,), 'punct': True, 'accuracy': 0.64749999999999996, 'min_freq': 2}
+{'punct': True, 'features': (<function lexicon_features at 0x108d0aae8>,), 'min_freq': 2, 'accuracy': 0.64749999999999996}
 
 Mean Accuracies per Setting:
 features=token_pair_features lexicon_features: 0.75125
