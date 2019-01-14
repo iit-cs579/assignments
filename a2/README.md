@@ -1,5 +1,5 @@
 
-** under construction**
+**under construction**
 
 In this assignment, you will use sklearn to classify movie reviews as positive or negative. You will implement a number of features and compare accuracy.
 

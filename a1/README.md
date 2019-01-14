@@ -1,5 +1,5 @@
 Assignment 1
 
-** under construction**
+**under construction**
 
 See `a1.py`.
