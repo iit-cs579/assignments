@@ -1,8 +1,0 @@
-1. Looking at the top errors printed by get_top_misclassified, name two ways you would modify your classifier to improve accuracy (it could be features, tokenization, or something else.)
-
-
-
-
-
-
-2. Implement one of the above methods. How did it affect the results?
