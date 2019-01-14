@@ -1,6 +1,6 @@
 # Setup
 
-1. Learn Python by completing the online Python training course at <http://www.codecademy.com/tracks/python>.
+1. Learn Python by completing the online Python training course at <https://www.codecademy.com/learn/learn-python>.
 
 2. Learn git by completing the online training course at <http://try.github.io> and/or watching https://trevordmiller.com/courses/real-world-git
 
