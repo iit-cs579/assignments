@@ -219,7 +219,7 @@ def friend_overlap(users):
 
 def followed_by_hillary_and_donald(users, twitter):
     """
-    Find and return the screen_name of the one Twitter user followed by both Hillary
+    Find and return the screen_names of the Twitter users followed by both Hillary
     Clinton and Donald Trump. You will need to use the TwitterAPI to convert
     the Twitter ID to a screen_name. See:
     https://dev.twitter.com/rest/reference/get/users/lookup
@@ -228,8 +228,8 @@ def followed_by_hillary_and_donald(users, twitter):
         users.....The list of user dicts
         twitter...The Twitter API object
     Returns:
-        A string containing the single Twitter screen_name of the user
-        that is followed by both Hillary Clinton and Donald Trump.
+        A list of strings containing the Twitter screen_names of the users
+        that are followed by both Hillary Clinton and Donald Trump.
     """
     ###TODO
     pass
@@ -283,7 +283,7 @@ def main():
     friend_counts = count_friends(users)
     print('Most common friends:\n%s' % str(friend_counts.most_common(5)))
     print('Friend Overlap:\n%s' % str(friend_overlap(users)))
-    print('User followed by Hillary and Donald: %s' % followed_by_hillary_and_donald(users, twitter))
+    print('User followed by Hillary and Donald: %s' % str(followed_by_hillary_and_donald(users, twitter)))
 
     graph = create_graph(users, friend_counts)
     print('graph has %s nodes and %s edges' % (len(graph.nodes()), len(graph.edges())))

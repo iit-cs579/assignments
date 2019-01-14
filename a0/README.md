@@ -1,9 +1,5 @@
 ## Assignment 0
 
-**under construction**
-
-
-
 **50 points**  
 
 
