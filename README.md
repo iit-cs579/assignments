@@ -46,3 +46,5 @@ For each assignment, then, you should do the following:
   - `nosetests --with-doctest a0.py:get_twitter`
 
 9. For some assignments, I also include a `Log.txt` file which contains the expected output when running the assignment's main method (e.g., `python a0.py`). You should look to make sure your output matches. Occasionally, some deviations are expected, particularly if sets are used, which are unordered.
+
+10. Feel free to open issues at <https://github.com/iit-cs579/main/issues> to ask for clarifications, discuss problems, etc.
