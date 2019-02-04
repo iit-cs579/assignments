@@ -1,0 +1,13 @@
+graph has 5062 nodes and 6060 edges
+subgraph has 712 nodes and 1710 edges
+norm_cut scores by max_depth:
+[(1, 1.0070175438596491), (2, 1.0005847953216374), (3, 0.12177725118483412), (4, 0.12177725118483412)]
+2 clusters
+first partition: cluster 1 has 701 nodes and cluster 2 has 11 nodes
+smaller cluster nodes:
+['Clifford The Big Red Dog', 'Scholastic Book Fairs', 'Arthur A. Levine Books', 'Scholastic Parents', 'READ 180', 'Scholastic Reading Club', 'The Hunger Games', 'WordGirl', 'Scholastic Teachers', 'Scholastic', 'Scholastic Canada']
+train_graph has 712 nodes and 1705 edges
+
+top jaccard scores for Bill Gates:
+[(('Bill Gates', 'Global Citizen'), 0.16216216216216217), (('Bill Gates', 'Bill & Melinda Gates Foundation'), 0.10344827586206896), (('Bill Gates', 'Grand Challenges Canada'), 0.09375), (('Bill Gates', 'I fucking love science'), 0.09375), (('Bill Gates', 'Girl Effect'), 0.09090909090909091)]
+jaccard accuracy=0.2
