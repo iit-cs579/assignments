@@ -1,0 +1,51 @@
+best cross-validation result:
+{'punct': True, 'features': (<function token_pair_features at 0x106560d90>, <function lexicon_features at 0x106560e18>), 'min_freq': 2, 'accuracy': 0.7700000000000001}
+worst cross-validation result:
+{'punct': True, 'features': (<function lexicon_features at 0x106560e18>,), 'min_freq': 2, 'accuracy': 0.6475}
+
+Mean Accuracies per Setting:
+features=token_pair_features lexicon_features: 0.75125
+features=token_features token_pair_features lexicon_features: 0.74583
+features=token_features token_pair_features: 0.73542
+features=token_pair_features: 0.72875
+min_freq=2: 0.72250
+punct=False: 0.72024
+min_freq=5: 0.71857
+punct=True: 0.70810
+min_freq=10: 0.70143
+features=token_features lexicon_features: 0.69667
+features=token_features: 0.69000
+features=lexicon_features: 0.65125
+
+TOP COEFFICIENTS PER CLASS:
+negative words:
+neg_words: 0.66113
+token_pair=the__worst: 0.37465
+token_pair=is__so: 0.31499
+token_pair=about__the: 0.30307
+token_pair=like__a: 0.27059
+
+positive words:
+pos_words: 0.52554
+token_pair=it__is: 0.24468
+token_pair=a__lot: 0.21013
+token_pair=to__find: 0.20849
+token_pair=the__and: 0.20232
+testing accuracy=0.730000
+
+TOP MISCLASSIFIED TEST DOCUMENTS:
+
+truth=0 predicted=1 proba=0.993731
+I absolutely despise this film. I wanted to love it - I really wanted to. But man, oh man - they were SO off with Sara. And the father living was pretty cheesy. That's straight out of the Shirley Temple film.<br /><br />I highly recommend THE BOOK. It is amazing. In the book, Sara is honorable and decent and she does the right thing... BECAUSE IT IS RIGHT. She doesn't have a spiteful bone in her body.<br /><br />In the film, she is mean-spirited and spiteful. She does little things to get back at Miss Minchin. In the book, Sara is above such things. She DOES stand up to Miss Minchin. She tells the truth and is not cowed by her. But she does not do the stupid, spiteful things that the Sara in the film does.<br /><br />It's really rather unsettling to me that so many here say they loved the book and they love the movie. I can't help but wonder... did we read the same book? The whole point of the book was personal responsibility, behaving with honor and integrity, ALWAYS telling the truth and facing adversity with calm and integrity.<br /><br />Sara has a happy ending in the book - not the ridiculous survival of her father, but the joining with his partner who has been searching for her. In the book, she is taken in by this new father figure who loves and cares for her and Becky. And Miss Minchin is NOT a chimney sweep - that part of the film really was stupid.<br /><br />To see all this praise for this wretched film is disturbing to me. We are praising a film that glorifies petty, spiteful behavior with a few tips of the hat to kindness? Sara in the book was kind to the bone and full of integrity. I don't even recognize her in the film... she's not in it.<br /><br />Good thing Mrs. Burnett isn't alive to see this horrid thing. It's ghastly and undeserving to bear the title of her book.
+
+truth=0 predicted=1 proba=0.991584
+When I attended college in the early 70s, it was a simpler time. Except for a brief occurrence in 1994, I've been totally free of the influence of illegal substances ever since and I've never regretted it...until now. DB:TBTE has got to be, hands-down, the best movie to watch when stoned. The odd, dreamlike state it creates is very strange when you're not smoking anything, but I'm sure that it would seem completely normal after a big doobie. (Not that I'm recommending this, you understand.) The soothing narration, provided, as it usually is in quality cinema, by a TB victim trapped in a painting, would be ideal to help the stoned viewer to follow along as things get complicated. Plus, everything in the film is pretty organic...from old-fashioned natural breasts to the bucket of fried chicken.<br /><br />Now, there's also no question that the young man with the (ahem) "hand problem" is absolutely sailing away in the film. At one point, you just KNOW that he's going to say, "Hey! When I move my hand, it leaves trails!!" Trust me...you'll know when you get to that point.<br /><br />The only other thing we have to address is this: How good can a film be when at least half the budget was spent on moving a huge bed frame around for interior and exterior shots? <br /><br />Definitely a must-see for horror aficionados, but suitable for the general audiences under the right conditions (if you know what I mean, and I think that you do). It only earns four stars because I can't actually say that it took any talent to make.
+
+truth=1 predicted=0 proba=0.990791
+In defense of this movie I must repeat what I had stated previously. The movie is called Arachina, it has a no name cast and I do not mean no name as in actors who play in little seen art house films. I mean no name as in your local high school decided to make a film no name and it might have a 2 dollar budget. So what does one expect? Hitchcock?<br /><br />I felt the movie never took itself seriously which automatically takes it out of the worst movie list. That list is only for big budget all star cast movies that takes itself way too seriously. THe movie The Oscar comes to mind, most of Sylvester Stallone's movies. THe two leads were not Hepburn and Tracy but they did their jobs well enough for this movie. The woman kicked butt and the guy was not a blithering idiot. The actor who played the old man was actually very good. The man who played anal retentive professor was no Clifton Webb but he did a god job. And the Bimbo's for lack of a better were played by two competent actors. I laughed at the 50 cent special effects. But that was part of the charm of the movie. It played like a hybrid Tremors meets Night of the Living Dead. The premise of the movie is just like all Giant Bug movies of the 50's. A Meteor or radiation stir up the ecosystem and before you know it we have Giant Ants, Lobsters, rocks or Lizards terrorizing the locals. A meteor was the cause of the problems this time. I was was very entertained. I didn't expect much and I go a lot more then I bargained for.
+
+truth=1 predicted=0 proba=0.990739
+Being a freshman in college, this movie reminded me of my relationship with my mom. Of course, my situation doesn't parrallel with Natalie Portman and Surandon's situation; but my mom and I have grown up with the typical mother and daughter fights. There is always the mother telling you what to do, or not being the kind of mother you want to be. I was balling my eyes at the end of this movie. Surandon's reaction of her daughter going to the East coast, miles away, after all they've been through reminded me of how I felt, being from a small city in the West coast, going to New York. <br /><br />The movie is meant for women who have children that are now all grown up. It is very touching, I was moved by the movie. Every feeling out of the characters in this movie was utterly real, you didn't get any phony sentimentality. I was sitting through the credits at the screening of this movie, alone, wishing my mother was sitting next to me so I could hug her and thank her for everything. This movie is a bit corny of course, but everything is trully momentous. Its all about what a mom can learn from her child; and what a child learns from her mother. 8/10
+
+truth=1 predicted=0 proba=0.974652
+Ah, classic comedy. At the point in the movie where brains get messed together, a two minute scene with Bruce Campbell beating himself up partially, reminds me of how simplistic movies and ideas can grab you and wrap you into a whole movie.<br /><br />For years and years, Bruce Campbell knows what kind of movies we want out of him. We want to see weird movies like Bubba Ho Tep. We want to see cameo roles in Sam Raimi movies, and we want to see 'Man with the Screaming Brain'. With the title alone, one knows that it's going to border that completely silly type of movie, like Army of Darkness, only with more silly and less monsters.<br /><br />The idea of the movie is simple. Bruce sees doctor. Doctor has new idea. Bruce gets bad things happen to him on way to see doctor. Coincidentally, it's the thing the doctor wanted to show him that saves him. Hilarity ensues.<br /><br />With the addition of Ted Raimi as a weird Russian guy, and journeyman Stacy Keach as Dr. Ivan Ivanovich Ivanov, it's funny, that does this movie. Complete funny. Never a point of scary.<br /><br />If you like the silly Bruce Campbell, you'll like this. Then again, why would you be watching this if you didn't like Bruce Campbell?
