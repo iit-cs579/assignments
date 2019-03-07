@@ -87,11 +87,9 @@ def tokenize(doc, keep_internal_punct=False):
       a numpy array containing the resulting tokens.
 
     >>> tokenize(" Hi there! Isn't this fun?", keep_internal_punct=False)
-    array(['hi', 'there', 'isn', 't', 'this', 'fun'], 
-          dtype='<U5')
+    array(['hi', 'there', 'isn', 't', 'this', 'fun'], dtype='<U5')
     >>> tokenize("Hi there! Isn't this fun? ", keep_internal_punct=True)
-    array(['hi', 'there', "isn't", 'this', 'fun'], 
-          dtype='<U5')
+    array(['hi', 'there', "isn't", 'this', 'fun'], dtype='<U5')
     """
     ###TODO
     pass
@@ -214,6 +212,11 @@ def vectorize(tokens_list, feature_fns, min_freq, vocab=None):
       that the columns are sorted alphabetically (so, the feature
       "token=great" is column 0 and "token=horrible" is column 1
       because "great" < "horrible" alphabetically),
+
+    When vocab is None, we build a new vocabulary from the given data.
+    when vocab is not None, we do not build a new vocab, and we do not
+    add any new terms to the vocabulary. This setting is to be used
+    at test time.
 
     >>> docs = ["Isn't this movie great?", "Horrible, horrible movie"]
     >>> tokens_list = [tokenize(d) for d in docs]
