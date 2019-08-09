@@ -1,3 +1,5 @@
+## Spring 2019
+
 Each student has their own private GitHub repository at:  
 <https://github.com/iit-cs579/[your-github-id]>
 
