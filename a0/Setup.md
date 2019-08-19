@@ -1,14 +1,13 @@
 # Setup
 
-1. Learn Python by completing the online Python training course at <https://www.codecademy.com/learn/learn-python>.
-
-2. Learn git by completing the online training course at <http://try.github.io> and/or watching https://trevordmiller.com/courses/real-world-git
-
-3. Install the Python/SciPy stack on your computer (if you haven't already) by follwing the instructions here: <http://continuum.io/downloads>. We'll be using Python 3.6, **not** Python 2.
-
-4. Install and Setup Git: <https://help.github.com/articles/set-up-git/>
-
-5. Clone your private class repository
+1. Learn Python by completing this online tutorial: <https://www.learnpython.org/> (3 hours)
+2. Create a GitHub account at <https://github.com/>
+3. Setup git by following <https://help.github.com/en/articles/set-up-git> (30 minutes)
+4. Learn git by completing the [Introduction to GitHub](https://lab.github.com/githubtraining/introduction-to-github) tutorial, reading the [git handbook](https://guides.github.com/introduction/git-handbook/), then completing the [Managing merge conflicts](https://lab.github.com/githubtraining/managing-merge-conflicts) tutorial (1 hour).
+5. Install the Python data science stack from <https://www.anaconda.com/distribution/> . **We will use Python 3** (30 minutes)
+6. Complete the scikit-learn tutorial from <https://www.datacamp.com/community/tutorials/machine-learning-python> (2 hours)
+7. Understand how python packages work by going through the [Python Packaging User Guide](https://packaging.python.org/tutorials/) (you can skip the "Creating Documentation" section). (1 hour)
+8. After I have created all the project repositories you can then clone your private class repository
 ```
 git clone https://github.com/iit-cs579/[github-username].git
 ```
@@ -21,3 +20,10 @@ E.g., for me this would be:
   - **Note:** This step will not work until I have setup your private repository. This usually happens by the second week of the semester (and this is why I need you to complete the course survey).
 
 See <https://github.com/iit-cs579/assignments> for instructions on submitting assignments.
+
+
+
+
+
+
+
