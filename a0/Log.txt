@@ -1,15 +1,15 @@
 Established Twitter connection.
-Read screen names: ['DrJillStein', 'GovGaryJohnson', 'HillaryClinton', 'realDonaldTrump']
-found 4 users with screen_names ['DrJillStein', 'GovGaryJohnson', 'HillaryClinton', 'realDonaldTrump']
+Read screen names: ['BernieSanders', 'JoeBiden', 'SenWarren', 'realDonaldTrump']
+found 4 users with screen_names ['BernieSanders', 'JoeBiden', 'SenWarren', 'realDonaldTrump']
 Friends per candidate:
-DrJillStein 1642
-GovGaryJohnson 3509
-HillaryClinton 783
-realDonaldTrump 45
+BernieSanders 1390
+JoeBiden 22
+SenWarren 493
+realDonaldTrump 47
 Most common friends:
-[(18766459, 3), (19608297, 3), (701725963, 3), (822215673812119553, 3), (12, 2)]
+[(818910970567344128, 3), (822215673812119553, 3), (15764644, 2), (15808765, 2), (24195214, 2)]
 Friend Overlap:
-[('DrJillStein', 'GovGaryJohnson', 237), ('GovGaryJohnson', 'HillaryClinton', 17), ('GovGaryJohnson', 'realDonaldTrump', 12), ('DrJillStein', 'HillaryClinton', 5), ('HillaryClinton', 'realDonaldTrump', 2), ('DrJillStein', 'realDonaldTrump', 0)]
-User followed by Hillary and Donald: [!!REDACTED!!]
-graph has 269 nodes and 534 edges
+[('BernieSanders', 'SenWarren', 14), ('BernieSanders', 'JoeBiden', 3), ('JoeBiden', 'SenWarren', 3), ('JoeBiden', 'realDonaldTrump', 2), ('BernieSanders', 'realDonaldTrump', 1), ('SenWarren', 'realDonaldTrump', 1)]
+User followed by Bernie and Donald: <REDACTED>
+graph has 24 nodes and 42 edges
 network drawn to network.png

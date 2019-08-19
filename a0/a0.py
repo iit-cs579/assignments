@@ -64,7 +64,7 @@ def read_screen_names(filename):
 
     Here's a doctest to confirm your implementation is correct.
     >>> read_screen_names('candidates.txt')
-    ['DrJillStein', 'GovGaryJohnson', 'HillaryClinton', 'realDonaldTrump']
+    ['BernieSanders', 'JoeBiden', 'SenWarren', 'realDonaldTrump']
     """
     ###TODO
     pass
@@ -217,10 +217,10 @@ def friend_overlap(users):
     pass
 
 
-def followed_by_hillary_and_donald(users, twitter):
+def followed_by_bernie_and_donald(users, twitter):
     """
-    Find and return the screen_names of the Twitter users followed by both Hillary
-    Clinton and Donald Trump. You will need to use the TwitterAPI to convert
+    Find and return the screen_names of the Twitter users followed by both Bernie
+    Sanders and Donald Trump. You will need to use the TwitterAPI to convert
     the Twitter ID to a screen_name. See:
     https://dev.twitter.com/rest/reference/get/users/lookup
 
@@ -229,7 +229,7 @@ def followed_by_hillary_and_donald(users, twitter):
         twitter...The Twitter API object
     Returns:
         A list of strings containing the Twitter screen_names of the users
-        that are followed by both Hillary Clinton and Donald Trump.
+        that are followed by both Bernie Sanders and Donald Trump.
     """
     ###TODO
     pass
@@ -283,7 +283,7 @@ def main():
     friend_counts = count_friends(users)
     print('Most common friends:\n%s' % str(friend_counts.most_common(5)))
     print('Friend Overlap:\n%s' % str(friend_overlap(users)))
-    print('User followed by Hillary and Donald: %s' % str(followed_by_hillary_and_donald(users, twitter)))
+    print('User followed by Bernie and Donald: %s' % str(followed_by_bernie_and_donald(users, twitter)))
 
     graph = create_graph(users, friend_counts)
     print('graph has %s nodes and %s edges' % (len(graph.nodes()), len(graph.edges())))
