@@ -59,8 +59,8 @@ def read_screen_names(filename):
     Params:
         filename....Name of the file to read.
     Returns:
-        A list of strings, one per screen_name, in the order they are listed
-        in the file.
+        A list of strings, one per screen_name, sorted in ascending
+        alphabetical order.
 
     Here's a doctest to confirm your implementation is correct.
     >>> read_screen_names('candidates.txt')
