@@ -3,8 +3,8 @@ repository.
 
 
 1. Assume I plan to use the friend_overlap function above to quantify the
-similarity of two users. E.g., because 238 is larger than 1, I conclude that
-Jill Stein and Gary Johnson are more similar than Hillary Clinton and Donald
+similarity of two users. E.g., because 14 is larger than 1, I conclude that
+Bernie Sanders and Elizabeth Warrent are more similar than Bernie Sanders and Donald
 Trump.
 
 How is this approach misleading? How might you fix it?
@@ -18,8 +18,8 @@ How is this approach misleading? How might you fix it?
 
 
 
-2. Looking at the output of your followed_by_hillary_and_donald function, why
-do you think this user is followed by both Hilary Clinton and Donald Trump,
+2. Looking at the output of your followed_by_bernie_and_donald function, why
+do you think this user is followed by both Bernie Sanders and Donald Trump,
 who are rivals? Do some web searches to see if you can find out more
 information.
 
@@ -35,8 +35,7 @@ information.
 
 
 
-3. There is a big difference in how many accounts each candidate follows (Gary
-Johnson follows over 3K accounts, while Donald Trump follows less than
+3. There is a big difference in how many accounts each candidate follows (Bernie Sanders follows over 1.3K accounts, while Donald Trump follows less than
 50). Why do you think this is? How might that affect our analysis?
 
 
