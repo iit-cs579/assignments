@@ -2,13 +2,13 @@
 
 # # CS579: Assignment 1
 #
-# In this assignment, we'll implement community detection and link prediction algorithms using Facebook "like" data.
+# In this assignment, we'll implement community detection algorithms using Facebook "like" data.
 #
 # The file `edges.txt.gz` indicates like relationships between facebook users. This was collected using snowball sampling: beginning with the user "Bill Gates", I crawled all the people he "likes", then, for each newly discovered user, I crawled all the people they liked.
 #
-# We'll cluster the resulting graph into communities, as well as recommend friends for Bill Gates.
+# We'll cluster the resulting graph into communities.
 #
-# Complete the **15** methods below that are indicated by `TODO`. I've provided some sample output to help guide your implementation.
+# Complete the methods below that are indicated by `TODO`. I've provided some sample output to help guide your implementation.
 
 
 # You should not use any imports not listed here:
@@ -17,6 +17,8 @@ import copy
 from itertools import combinations
 import math
 import networkx as nx
+from numpy.linalg import eigh
+import numpy as np
 import urllib.request
 
 
@@ -164,7 +166,7 @@ def get_components(graph):
     A helper function you may use below.
     Returns the list of all connected components in the given graph.
     """
-    return [c for c in nx.connected_component_subgraphs(graph)]
+    return [graph.subgraph(c).copy() for c in nx.connected_components(graph)]
 
 def partition_girvan_newman(graph, max_depth):
     """
@@ -274,43 +276,6 @@ def norm_cut(S, T, graph):
     ###TODO
     pass
 
-
-def brute_force_norm_cut(graph, max_size):
-    """
-    Enumerate over all possible cuts of the graph, up to max_size, and compute the norm cut score.
-    Params:
-        graph......graph to be partitioned
-        max_size...maximum number of edges to consider for each cut.
-                   E.g, if max_size=2, consider removing edge sets
-                   of size 1 or 2 edges.
-    Returns:
-        (unsorted) list of (score, edge_list) tuples, where
-        score is the norm_cut score for each cut, and edge_list
-        is the list of edges (source, target) for each cut.
-        
-
-    Note: only return entries if removing the edges results in exactly
-    two connected components.
-
-    You may find itertools.combinations useful here.
-
-    >>> r = brute_force_norm_cut(example_graph(), 1)
-    >>> len(r)
-    1
-    >>> r
-    [(0.41666666666666663, [('B', 'D')])]
-    >>> r = brute_force_norm_cut(example_graph(), 2)
-    >>> len(r)
-    14
-    >>> sorted(r)[0]
-    (0.41666666666666663, [('A', 'B'), ('B', 'D')])
-    """
-    ###TODO
-    pass
-
-
-
-
 def score_max_depths(graph, max_depths):
     """
     In order to assess the quality of the approximate partitioning method
@@ -331,98 +296,47 @@ def score_max_depths(graph, max_depths):
     ###TODO
     pass
 
+"""
+Next, use eigenvalue decomposition to partition a graph.
+"""
 
-## Link prediction
-
-# Next, we'll consider the link prediction problem. In particular,
-# we will remove 5 of the accounts that Bill Gates likes and
-# compute our accuracy at recovering those links.
-
-def make_training_graph(graph, test_node, n):
+def get_second_eigenvector(graph):
     """
-    To make a training graph, we need to remove n edges from the graph.
-    As in lecture, we'll assume there is a test_node for which we will
-    remove some edges. Remove the edges to the first n neighbors of
-    test_node, where the neighbors are sorted alphabetically.
-    E.g., if 'A' has neighbors 'B' and 'C', and n=1, then the edge
-    ('A', 'B') will be removed.
-
-    Be sure to *copy* the input graph prior to removing edges.
-
-    Params:
-      graph.......a networkx Graph
-      test_node...a string representing one node in the graph whose
-                  edges will be removed.
-      n...........the number of edges to remove.
+    1. Create the Laplacian matrix.
+    2. Obtain its eigenvector matrix using the eigh function.
+    3. Return the second column eigenvector 
 
     Returns:
-      A *new* networkx Graph with n edges removed.
+      a 1d numpy array containing the second eigenvector
 
-    In this doctest, we remove edges for two friends of D:
-    >>> g = example_graph()
-    >>> sorted(g.neighbors('D'))
-    ['B', 'E', 'F', 'G']
-    >>> train_graph = make_training_graph(g, 'D', 2)
-    >>> sorted(train_graph.neighbors('D'))
-    ['F', 'G']
+    >>> np.round(get_second_eigenvector(example_graph()), 2)
+    array([ 0.49,  0.3 ,  0.49, -0.21, -0.36, -0.36, -0.36])
     """
     ###TODO
     pass
 
-
-
-def jaccard(graph, node, k):
+def partition_by_eigenvector(graph):
     """
-    Compute the k highest scoring edges to add to this node based on
-    the Jaccard similarity measure.
-    Note that we don't return scores for edges that already appear in the graph.
-
-    Params:
-      graph....a networkx graph
-      node.....a node in the graph (a string) to recommend links for.
-      k........the number of links to recommend.
+    Using the get_second_eigenvector function above, partition the graph into
+    two components using a splitting threshold of 0. That is, nodes
+    whose corresponding value in the second eigenvector is >= 0 are in one cluster,
+    and the rest are in the other cluster.
 
     Returns:
-      A list of tuples in descending order of score representing the
-      recommended new edges. Ties are broken by
-      alphabetical order of the terminal node in the edge.
+      A list of two networkx Graph objects, one per partition. 
+      Sort these in ascending order of partition size.
 
-    In this example below, we remove edges (D, B) and (D, E) from the
-    example graph. The top two edges to add according to Jaccard are
-    (D, E), with score 0.5, and (D, A), with score 0. (Note that all the
-    other remaining edges have score 0, but 'A' is first alphabetically.)
-
-    >>> g = example_graph()
-    >>> train_graph = make_training_graph(g, 'D', 2)
-    >>> jaccard(train_graph, 'D', 2)
-    [(('D', 'E'), 0.5), (('D', 'A'), 0.0)]
+    >>> graph = example_graph()
+    >>> result = partition_by_eigenvector(graph)
+    >>> sorted(result[0].nodes())
+    ['A', 'B', 'C']
+    >>> sorted(result[1].nodes())
+    ['D', 'E', 'F', 'G']
+    >>> round(norm_cut(result[0].nodes(), result[1].nodes(), graph),  2)
+    0.42
     """
     ###TODO
     pass
-
-
-
-def evaluate(predicted_edges, graph):
-    """
-    Return the fraction of the predicted edges that exist in the graph.
-
-    Args:
-      predicted_edges...a list of edges (tuples) that are predicted to
-                        exist in this graph
-      graph.............a networkx Graph
-
-    Returns:
-      The fraction of edges in predicted_edges that exist in the graph.
-
-    In this doctest, the edge ('D', 'E') appears in the example_graph,
-    but ('D', 'A') does not, so 1/2 = 0.5
-
-    >>> evaluate([('D', 'E'), ('D', 'A')], example_graph())
-    0.5
-    """
-    ###TODO
-    pass
-
 
 """
 Next, we'll download a real dataset to see how our algorithm performs.
@@ -442,37 +356,38 @@ def read_graph():
     """
     return nx.read_edgelist('edges.txt.gz', delimiter='\t')
 
-
 def main():
     """
     FYI: This takes ~10-15 seconds to run on my laptop.
     """
     download_data()
     graph = read_graph()
-    print('graph has %d nodes and %d edges' %
+    print('full graph has %d nodes and %d edges' %
           (graph.order(), graph.number_of_edges()))
     subgraph = get_subgraph(graph, 2)
     print('subgraph has %d nodes and %d edges' %
           (subgraph.order(), subgraph.number_of_edges()))
-    print('norm_cut scores by max_depth:')
-    print(score_max_depths(subgraph, range(1,5)))
+    print('\n\ncomputing norm_cut scores by max_depth...\nmax_depth\tnorm_cut_score')
+    for max_depth, score in score_max_depths(subgraph, range(1,5)):
+        print('%d\t\t%.3f' % (max_depth, score))
+    print('\n\ngetting result with max_depth=3')
     clusters = partition_girvan_newman(subgraph, 3)
     print('%d clusters' % len(clusters))
     print('first partition: cluster 1 has %d nodes and cluster 2 has %d nodes' %
           (clusters[0].order(), clusters[1].order()))
     print('smaller cluster nodes:')
-    print(sorted(clusters, key=lambda x: x.order())[0].nodes())
-    test_node = 'Bill Gates'
-    train_graph = make_training_graph(subgraph, test_node, 5)
-    print('train_graph has %d nodes and %d edges' %
-          (train_graph.order(), train_graph.number_of_edges()))
+    print(sorted(sorted(clusters, key=lambda x: x.order())[0].nodes()))
 
+    print('\n\npartitioning by eigenvector...')
+    clusters2 = partition_by_eigenvector(subgraph)
+    print('cluster 1 has %d nodes and cluster 2 has %d nodes' %
+          (clusters2[0].order(), clusters2[1].order()))
+    print('norm_cut score=%.3f' % norm_cut(clusters2[0].nodes(),
+                                           clusters2[1].nodes(),
+                                           subgraph))
+    print('10 nodes from smaller cluster:')
+    print(sorted(clusters2[0].nodes())[:10])
 
-    jaccard_scores = jaccard(train_graph, test_node, 5)
-    print('\ntop jaccard scores for Bill Gates:')
-    print(jaccard_scores)
-    print('jaccard accuracy=%g' %
-          evaluate([x[0] for x in jaccard_scores], subgraph))
 
 
 if __name__ == '__main__':

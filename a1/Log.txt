@@ -1,13 +1,24 @@
-graph has 5062 nodes and 6060 edges
+full graph has 5062 nodes and 6060 edges
 subgraph has 712 nodes and 1710 edges
-norm_cut scores by max_depth:
-[(1, 1.0070175438596491), (2, 1.0005847953216374), (3, 0.12177725118483412), (4, 0.12177725118483412)]
+
+
+computing norm_cut scores by max_depth...
+max_depth	norm_cut_score
+1		1.007
+2		1.001
+3		0.122
+4		0.122
+
+
+getting result with max_depth=3
 2 clusters
 first partition: cluster 1 has 701 nodes and cluster 2 has 11 nodes
 smaller cluster nodes:
-['Clifford The Big Red Dog', 'Scholastic Book Fairs', 'Arthur A. Levine Books', 'Scholastic Parents', 'READ 180', 'Scholastic Reading Club', 'The Hunger Games', 'WordGirl', 'Scholastic Teachers', 'Scholastic', 'Scholastic Canada']
-train_graph has 712 nodes and 1705 edges
+['Arthur A. Levine Books', 'Clifford The Big Red Dog', 'READ 180', 'Scholastic', 'Scholastic Book Fairs', 'Scholastic Canada', 'Scholastic Parents', 'Scholastic Reading Club', 'Scholastic Teachers', 'The Hunger Games', 'WordGirl']
 
-top jaccard scores for Bill Gates:
-[(('Bill Gates', 'Global Citizen'), 0.16216216216216217), (('Bill Gates', 'Bill & Melinda Gates Foundation'), 0.10344827586206896), (('Bill Gates', 'Grand Challenges Canada'), 0.09375), (('Bill Gates', 'I fucking love science'), 0.09375), (('Bill Gates', 'Girl Effect'), 0.09090909090909091)]
-jaccard accuracy=0.2
+
+partitioning by eigenvector...
+cluster 1 has 86 nodes and cluster 2 has 626 nodes
+norm_cut score=0.389
+10 nodes from smaller cluster:
+['Aeon Magazine', 'American Museum of Natural History', 'Astronomy Picture of the Day (APOD)', 'Big History Project', 'Bradshaw Foundation', 'California Charter Schools Association', 'California Council for the Social Studies', 'California Geographic Alliance', 'Center for Civic Education', 'CityClub Seattle']
