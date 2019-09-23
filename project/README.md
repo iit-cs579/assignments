@@ -19,7 +19,7 @@ Instead, you should collect data directly from an online social networking sourc
 ### Proposal
 Complete this survey, **one per team**, to submit your propsal:
 
-<https://goo.gl/forms/ozQ8X5uPiZPoJVbp1>
+<https://forms.gle/merhXJ5VNp2eGRr96>
 
 You will specify the following:
 
