@@ -1,4 +1,4 @@
-** under construction**
+**under construction**
 
 ## Project
 
@@ -12,14 +12,14 @@ Instead, you should collect data directly from an online social networking sourc
 - Sample projects can be found [here](http://snap.stanford.edu/class/cs224w-2016/projects.html) or by reading recent papers published in ICWSM, a leading OSNA confernece: <http://icwsm.org/2017/program/accepted-papers/>
 - You may use existing libraries (e.g., nltk, TensorFlow, theano), but your project should be your own.
 - After the Proposal survey is submitted (see below), a new private repository will be created for your group.
-- Place all code for your project in a folder called `code` in your group project repository.
+- I've given you starter code that contains a command-line interface. You will implement each of the commands.
 - There's no need to store the raw data in github, but it should be clear how to collect it by reading your report and code.
 - See an [example project repo](https://github.com/iit-cs579/sample-project)
 
 ### Proposal
 Complete this survey, **one per team**, to submit your propsal:
 
-<https://goo.gl/forms/ozQ8X5uPiZPoJVbp1>
+<https://forms.gle/merhXJ5VNp2eGRr96>
 
 You will specify the following:
 
