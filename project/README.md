@@ -1,4 +1,4 @@
-**under construction**
+
 
 ## Project
 
@@ -67,7 +67,7 @@ Submit the report as a **PDF** file in the root folder of your project repositor
 
 **The presentation.pdf file should be uploaded the night before the presentation.**
 
-A **maximum** five minute presentation summarizing your project, following a similar template as the report.
+A **maximum** eight minute presentation summarizing your project, following a similar template as the report.
 
 Upload your slides in the root of your project folder as **presentation.pdf**.
 
